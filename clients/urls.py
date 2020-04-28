@@ -1,13 +1,16 @@
 from django.urls import path
+from django.views.generic import TemplateView
+
 from .views import (
-    CreateClientView, DeleteClientView, UpdateClientView,
-    ListClientView, DetailClientView
+    CreateClient, DeleteClient, UpdateClient,
+    ListClient, DetailClient
 )
 
 urlpatterns = [
-    path('new/', CreateClientView.as_view(), name='create_client'),
-    path('client/', DetailClientView.as_view(), name='detail_client'),
-    path('delete/<int:id>/', CreateClientView.as_view(), name='delete_client'),
-    path('update/<int:id>/', DeleteClientView.as_view(), name='update_client'),
-    path('clients/<int:id>/', ListClientView.as_view(), name='list_client')
+    path('new/', CreateClient.as_view(), name='create_client'),
+    path('list/', ListClient.as_view(), name='list_client'),
+    path('delete/<int:pk>/', DeleteClient.as_view(), name='delete_client'),
+    path('update/<int:pk>/', UpdateClient.as_view(), name='update_client'),
+    path('detail/<int:pk>/', DetailClient.as_view(), name='detail_client'),
+    path('doesnt_found/', TemplateView.as_view(template_name='client_doesnt_found.html'), name='doesnt_found_client')
 ]
