@@ -12,5 +12,5 @@ urlpatterns = [
     path('delete/<int:pk>/', DeleteClient.as_view(), name='delete_client'),
     path('update/<int:pk>/', UpdateClient.as_view(), name='update_client'),
     path('detail/<int:pk>/', DetailClient.as_view(), name='detail_client'),
-    path('doesnt_found/', TemplateView.as_view(template_name='client_doesnt_found.html'), name='doesnt_found_client')
+    path('doesnt_found/', TemplateView.as_view(template_name='clients/client_doesnt_found.html'), name='doesnt_found_client')  # noqa: E501
 ]

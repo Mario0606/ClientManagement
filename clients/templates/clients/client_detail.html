@@ -1,9 +1,12 @@
-<h1> Client Detail</h1>
-<div>
-    First Name: {{ object.first_name }}<br>
-    Last Name: {{ object.last_name }}
-</div>
-<a href="{% url 'update_client' object.id %}">Update</a>
-<a href="{% url 'delete_client' object.id %}">Delete</a>
-<a href="{% url 'list_client' %}">Back</a>
-
+{% extends 'base.html' %}
+{% block title %} Detail Client{% endblock %}
+{% block main %}
+    <h1> Client Detail</h1>
+    <div>
+        First Name: {{ object.first_name }}<br>
+        Last Name: {{ object.last_name }}
+    </div>
+    <a href="{% url 'update_client' object.id %}">Update</a>
+    <a href="{% url 'delete_client' object.id %}">Delete</a>
+    <a href="{% url 'list_client' %}">Back</a>
+{% endblock %}

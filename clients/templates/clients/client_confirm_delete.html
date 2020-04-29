@@ -1,7 +1,10 @@
-<h1>Client Delete</h1>
-
-<form action="" method="post">
-    {% csrf_token %}
-    <p>Are you sure you want to delete "{{ object }}"?</p>
-    <input type="submit" value="Confirm">
-</form>
+{% extends 'base.html' %}
+{% block title %} Delete Client{% endblock %}
+{% block main %}
+    <h1>Client Delete</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        <input type="submit" value="Confirm">
+    </form>
+{% endblock %}

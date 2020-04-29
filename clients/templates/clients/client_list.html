@@ -1,7 +1,11 @@
-<h1>Client List</h1>
+{% extends 'base.html' %}
+{% block title %} Delete Client{% endblock %}
+{% block main %}
+    <h1>Client List</h1>
+    {% for client in clients %}
+        <a href="{% url 'detail_client' client.id %}">{{ client }}</a>
+    {% empty %}
+        <h2> Doesn't exist any client</h2>
+    {% endfor %}
+{% endblock %}
 
-{% for client in clients %}
-    <a href="{% url 'detail_client' client.id %}">{{ client }}</a>
-{% empty %}
-    <h2> Doesn't exist any client</h2>
-{% endfor %}
