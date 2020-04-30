@@ -7,6 +7,7 @@ class Client(models.Model):
     salary = models.DecimalField(max_digits=5, decimal_places=2)
     age = models.IntegerField()
     bio = models.TextField()
+    photo = models.ImageField(upload_to='profile_photos', null=True, blank=True)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name

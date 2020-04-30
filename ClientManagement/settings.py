@@ -122,3 +122,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     'statics'
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
