@@ -7,6 +7,5 @@
         Last Name: {{ object.last_name }}
     </div>
     <a href="{% url 'update_client' object.id %}">Update</a>
-    <a href="{% url 'delete_client' object.id %}">Delete</a>
     <a href="{% url 'list_client' %}">Back</a>
 {% endblock %}

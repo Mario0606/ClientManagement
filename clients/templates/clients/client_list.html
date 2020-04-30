@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
-{% block title %} Delete Client{% endblock %}
+{% block title %} Home {% endblock %}
 {% block main %}
-    <h1>Client List</h1>
-    {% for client in clients %}
+    <div>
+        <h1>Client List</h1>
+        {% for client in clients %}
         <a href="{% url 'detail_client' client.id %}">{{ client }}</a>
-    {% empty %}
+        <a href="{% url 'delete_client' client.id %}">Delete</a>
+        {% empty %}
         <h2> Doesn't exist any client</h2>
-    {% endfor %}
+        {% endfor %}
+    </div>
+    <a href="{% url 'create_client' %}">New Client</a>
+    <a href="{% url 'logout' %}">Logout</a>
 {% endblock %}
 
