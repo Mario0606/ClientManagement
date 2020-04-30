@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'clients'
+    'clients',
+    'home'
 ]
 
 MIDDLEWARE = [
@@ -128,5 +129,5 @@ MEDIA_ROOT = 'media'
 
 
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = 'list_client'
+LOGIN_REDIRECT_URL = 'home'
 
