@@ -12,4 +12,4 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('clients/', include(client_urls)),
     path('', include(home_urls))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

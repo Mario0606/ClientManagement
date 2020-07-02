@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 {% block title %} Create Client {% endblock %}
 {% block main %}
-    <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Save" />
-    </form>
+    <div class="container">
+        <form class="myForm" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|bootstrap }}
+            <div class="finish-buttons">
+                <input class="btn btn-primary finish-button" type="submit" value="Save"/>
+                <a class="btn btn-secondary finish-button" href="{% url 'list_client' %}">Back</a>
+            </div>
+        </form>
+    </div>
 {% endblock%}

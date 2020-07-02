@@ -1,16 +1,28 @@
 {% extends 'base.html' %}
 {% block title %} Home {% endblock %}
 {% block main %}
-    <div>
-        <h1>Client List</h1>
-        {% for client in clients %}
-        <a href="{% url 'detail_client' client.id %}">{{ client }}</a>
-        <a href="{% url 'delete_client' client.id %}">Delete</a>
-        {% empty %}
-        <h2> Doesn't exist any client</h2>
-        {% endfor %}
+    <div class="row flex">
+        <div class='col-sm'>
+            <div>
+                <h1 class="display-4">Client List</h1>
+                <ul class="list-group">
+                    {% for client in clients %}
+                        <li class="list-group-item liCard">
+                            <a href="{% url 'detail_client' client.id %}">{{ client }}</a>
+                            <a href="{% url 'delete_client' client.id %}">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    {% empty %}
+                    <li class="list-group-item liCard">Doesn't exist any client</li>
+                    {% endfor %}
+                    <a href="{% url 'create_client' %}" class="btn btn-primary">New Client</a>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm logout">
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
     </div>
-    <a href="{% url 'create_client' %}">New Client</a>
-    <a href="{% url 'logout' %}">Logout</a>
 {% endblock %}
 

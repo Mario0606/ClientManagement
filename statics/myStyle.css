@@ -1,0 +1,51 @@
+h1 {
+    color: blue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.home {
+    color: red;
+}
+
+.liCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-start;
+}
+
+.myForm {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex: 0;
+}
+
+.container {
+    margin-bottom: 30px;
+}
+
+.finish-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.finish-button {
+    flex-grow: 1;
+    margin: 5px;
+}

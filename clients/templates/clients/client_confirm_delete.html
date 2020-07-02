@@ -2,9 +2,12 @@
 {% block title %} Delete Client{% endblock %}
 {% block main %}
     <h1>Client Delete</h1>
-    <form action="" method="post">
+    <form action="" method="post" class="myForm">
         {% csrf_token %}
         <p>Are you sure you want to delete "{{ object }}"?</p>
-        <input type="submit" value="Confirm">
+        <div class="finish-buttons">
+            <input class="btn btn-danger finish-button" type="submit" value="Confirm"/>
+            <a class="btn btn-secondary finish-button" href="{% url 'list_client' %}">Cancel</a>
+        </div>
     </form>
 {% endblock %}

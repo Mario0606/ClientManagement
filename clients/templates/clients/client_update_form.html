@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 {% block title %} Update Client{% endblock %}
 {% block main %}
     <h1>Update: {{client}}</h1>
-    <form action="" method="post" enctype="multipart/form-data">
+    <form class="myForm" action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Update" />
+        {{ form|bootstrap }}
+        <div class="finish-buttons">
+            <input class="btn btn-primary finish-button" type="submit" value="Update"/>
+            <a class="btn btn-secondary finish-button" href="{% url 'list_client' %}">Back</a>
+        </div>
     </form>
 {% endblock %}

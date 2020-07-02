@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
-{% block title %} Detail Client{% endblock %}
+{% block title %} Detail Client {% endblock %}
 {% block main %}
     <h1> Client Detail</h1>
     <div>
-        First Name: {{ object.first_name }}<br>
-        Last Name: {{ object.last_name }}
+        <ul>
+            <li>
+                First Name: {{ object.first_name }}
+            </li>
+            <li>
+                Last Name: {{ object.last_name }}
+            </li>
+        </ul>
     </div>
-    <a href="{% url 'update_client' object.id %}">Update</a>
-    <a href="{% url 'list_client' %}">Back</a>
+    <a class="btn btn-primary" href="{% url 'update_client' object.id %}">Update</a>
+    <a class="btn btn-secondary" href="{% url 'list_client' %}">Back</a>
 {% endblock %}
