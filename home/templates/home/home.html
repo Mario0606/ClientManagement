@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
 {% block title %} Home {% endblock %}
 {% block main %}
-    <div class="row">
-        <div class='col-sm'>
-            <h1>Welcome</h1>
-        </div>
-        <div class='col-sm'>
-            {% if user.is_authenticated %}
-                <p> Hello {{ user.username }}</p>
+    {% if user.is_authenticated %}
+        <div class="row flex">
+            <div class="col-sm">
+                <h1> Hello {{ user.username }}</h1>
                 <a href="{% url 'list_client' %}">Clients</a>
+            </div>
+            <div class="col-sm logout">
                 <a href="{% url 'logout' %}">Logout</a>
-            {% else %}
-                <a href="{% url 'login' %}">Login</a>
-            {% endif %}
+            </div>
         </div>
-    </div>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
 {% endblock %}

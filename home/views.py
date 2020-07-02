@@ -7,5 +7,4 @@ class Logout(View):
 
     def get(self, request):
         logout(request)
-        print('aq')
         return redirect('home')
